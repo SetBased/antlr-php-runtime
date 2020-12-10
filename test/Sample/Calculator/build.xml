@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test/Sample/Calculator" default="antlr" basedir=".">
+    <property name="ANTLR4" value=""/>
+
+    <target name="antlr">
+        <exec executable="java" passthru="true" checkreturn="true">
+            <arg value="-jar"/>
+            <arg value="${ANTLR4}"/>
+            <arg value="-Dlanguage=PHP"/>
+            <arg value="-visitor"/>
+            <arg value="-no-listener"/>
+            <arg value="-package"/>
+            <arg value="Antlr\\Antlr4\\Runtime\\Test\\Sample\\Calculator\\Antlr"/>
+            <arg value="test/Sample/Calculator/Antlr/CalculatorLexer.g4"/>
+        </exec>
+        <exec executable="java" passthru="true" checkreturn="true">
+            <arg value="-jar"/>
+            <arg value="${ANTLR4}"/>
+            <arg value="-Dlanguage=PHP"/>
+            <arg value="-visitor"/>
+            <arg value="-no-listener"/>
+            <arg value="-package"/>
+            <arg value="Antlr\\Antlr4\\Runtime\\Test\\Sample\\Calculator\\Antlr"/>
+            <arg value="test/Sample/Calculator/Antlr/CalculatorParser.g4"/>
+        </exec>
+    </target>
+</project>

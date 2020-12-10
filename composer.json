@@ -15,6 +15,9 @@
     "ext-mbstring": "*"
   },
   "require-dev": {
+    "ext-readline": "*",
+    "phing/phing": "^2.16",
+    "phpunit/phpunit": "^9.5"
   },
   "autoload": {
     "psr-4": {
@@ -23,7 +26,14 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Antlr\\Antlr4\\Runtime\\Tests\\": "test/"
+      "Antlr\\Antlr4\\Runtime\\Test\\": "test/"
     }
+  },
+  "conflict": {
+    "antlr/antlr4-php-runtime": "*"
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "sort-packages": true
   }
 }

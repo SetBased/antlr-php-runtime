@@ -1,5 +1,7 @@
+/.phpunit.result.cache
+/bin/
 /composer.lock
-/vendor
-/phpcs.xml
-/phpstan.neon
-/phpunit.xml
+/test/**/*.interp
+/test/coverage.xml
+/test/report/
+/vendor/

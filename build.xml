@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="antlr-php-runtime" default="build" basedir=".">
+    <property name="ANTLR4" value="/usr/local/lib/antlr-4.9-complete.jar"/>
+
+    <!-- Run composer update -->
+    <target name="update">
+        <!-- Update PHP packages -->
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="update"/>
+        </exec>
+
+        <!-- Show outdated PHP packages -->
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="outdated"/>
+            <arg value="--direct"/>
+        </exec>
+    </target>
+
+    <target name="antlr">
+        <phing phingfile="test/Sample/Calculator/build.xml" inheritAll="true" target="antlr" haltonfailure="true"/>
+    </target>
+
+    <!-- Runs all unit tests -->
+    <target name="unit">
+        <exec command="bin/phpunit" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="build">
+        <echo message="Noting to do."/>
+    </target>
+</project>

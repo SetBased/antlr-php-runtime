@@ -1,14 +1,11 @@
 language: php
-dist: trusty
-
 php:
-  - '7.2'
-  - '7.3'
+  - '7.4'
+  - '8.0'
 
-before_script:
-  - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
+install:
+  - travis_retry composer --no-interaction self-update
+  - travis_retry composer --no-interaction update
 
 script:
-  - vendor/bin/phpstan --level=max analyse src
-  - vendor/bin/phpcs
+  - ./bin/phing unit
