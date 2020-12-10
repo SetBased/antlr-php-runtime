@@ -98,8 +98,8 @@ EOL;
    */
   public function test05(): void
   {
+    $this->expectOutputRegex('/error/');
     $this->calculator('**');
-    self::assertStringContainsString('error', $this->getActualOutput());
   }
 
   //--------------------------------------------------------------------------------------------------------------------
